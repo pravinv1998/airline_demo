@@ -1,0 +1,22 @@
+{% extends 'flights/layout.html' %}
+
+
+{% block title %}Display Flights{% endblock %}
+
+{% block body %}
+
+  <h1>Flights Details</h1>
+  <h4> (add flight number in url along with flights to sea details) </h4>
+  <h3>
+    <ul>
+      {% for flight in flights %}
+        <li>Flight {{ flight.id }}: {{flight.origin}} to {{flight.destination}}</li>
+      {% endfor %}<br>
+      {% for city in baramati %}
+      filter city is: {{city.id}}: {{city.city}} ({{city.code}})
+      {% endfor %}
+    </ul>
+  </h3>
+  
+
+{% endblock %}
